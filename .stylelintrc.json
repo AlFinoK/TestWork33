@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier-scss"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "selector-class-pattern": null,
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "at-rules",
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "supports"
+      },
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      "rules"
+    ],
+    "order/properties-order": [],
+    "no-empty-source": null
+  }
+}

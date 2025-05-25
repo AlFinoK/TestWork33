@@ -1,0 +1,31 @@
+.cartBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: $red-color;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.9rem;
+
+  &:hover {
+    background-color: #a1001a;
+  }
+}
+
+.inCart {
+  background-color: #4caf50;
+
+  &:hover {
+    background-color: #3b8b3b;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: white;
+}

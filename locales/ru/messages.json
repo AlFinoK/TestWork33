@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "username_min": "Username must be at least 3 characters",
+    "password_min": "Password must be at least 6 characters"
+  },
+  "errors": {
+    "invalidCreds": "Invalid username or password"
+  },
+
+  "header": {
+    "phone": "+7 (999) 999-99-99",
+    "email": "test@gmail.com",
+    "address": "Al-Farabi 54",
+    "login": "Login",
+    "logout": "Logout",
+    "modal": {
+      "title": "Confirm logout",
+      "description": "Are you sure you want to logout?",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "toastError": "Fill all fields"
+    }
+  }
+}

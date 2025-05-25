@@ -1,0 +1,23 @@
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (width <= 768px) {
+    display: none;
+  }
+}
+
+.infoItem {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.hoverable {
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $red-color;
+  }
+}

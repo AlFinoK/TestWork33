@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: rgb(243 244 245 / 100%);
+
+  .btn {
+    font-size: 12px !important;
+    color: rgb(136 137 138 / 100%) !important;
+    padding: 8px 16px !important;
+    text-transform: uppercase;
+  }
+
+  .btnActive {
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: white;
+    color: $primary-color;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 8%);
+  }
+}

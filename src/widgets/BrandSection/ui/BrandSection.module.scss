@@ -1,0 +1,31 @@
+.section {
+  background-color: black;
+  color: white;
+  border-bottom: 3px solid $red-color;
+}
+
+.inner {
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 52px;
+  line-height: 130%;
+  font-weight: 500;
+}
+
+.dot {
+  font-size: inherit;
+  color: $red-color;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (width <= 970px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

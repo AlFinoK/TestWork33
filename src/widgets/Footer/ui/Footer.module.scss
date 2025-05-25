@@ -1,0 +1,25 @@
+.footer {
+  background-color: #1e1f29;
+  color: $red-color;
+}
+
+.inner {
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.loggesAs {
+  color: white;
+  font-size: 14px;
+}

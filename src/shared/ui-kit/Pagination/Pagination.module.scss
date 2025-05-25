@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
+  flex-wrap: wrap;
+}
+
+.pageInfo {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding: 0 8px;
+}
