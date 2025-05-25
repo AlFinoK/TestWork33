@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import { toast } from 'react-hot-toast'
+import { useTranslations } from 'next-intl'
 import { ShoppingCartIcon } from '@heroicons/react/20/solid'
 
 import { Product } from '@/shared/lib'
@@ -16,17 +17,18 @@ interface CartButtonProps {
 }
 
 export const CartButton: React.FC<CartButtonProps> = ({ product }) => {
+  const t = useTranslations('cart')
   const addItem = useCartStore((state) => state.addItem)
   const isInCart = useCartStore((state) => state.isInCart(product.id))
 
   const handleAddToCart = () => {
     if (isInCart) {
-      toast('Товар уже в корзине')
+      toast(t('alreadyInCart'))
       return
     }
 
     addItem(product)
-    toast.success('Успешно добавлено в корзину')
+    toast.success(t('addedSuccess'))
   }
 
   return (
@@ -35,11 +37,11 @@ export const CartButton: React.FC<CartButtonProps> = ({ product }) => {
       size="lg"
       className={clsx(s.cartBtn, { [s.inCart]: isInCart })}
       onClick={handleAddToCart}
-      aria-label={isInCart ? 'Товар в корзине' : 'Добавить в корзину'}
+      aria-label={isInCart ? t('inCart') : t('addToCart')}
       type="button"
     >
       <ShoppingCartIcon className={s.icon} />
-      {isInCart ? ' В корзине' : ' В корзину'}
+      {isInCart ? ` ${t('inCart')}` : ` ${t('addToCart')}`}
     </Button>
   )
 }

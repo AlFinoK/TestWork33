@@ -4,12 +4,11 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import clsx from 'clsx'
-import { EnvelopeIcon, MapPinIcon, PhoneIcon, UserIcon } from '@heroicons/react/20/solid'
+import { UserIcon } from '@heroicons/react/20/solid'
 
 import { loginURL } from '@/shared/lib'
-import { Link } from '@/shared/config'
 import { useAuthStore } from '@/entities/auth'
-import { Button, Modal, useModal, UserBox } from '@/shared/ui-kit'
+import { Button, LangSwitcher, Modal, useModal, UserBox } from '@/shared/ui-kit'
 import { useUserStore } from '@/entities/user'
 
 import s from './Header.module.scss'
@@ -40,13 +39,11 @@ export const Header = () => {
             </div>
 
             <div className={clsx(s.right, isMobileMenuOpen && s.mobileMenuOpen)}>
+              <LangSwitcher />
+
               {isAuthenticated ? (
                 <>
                   <UserBox data={user} />
-                  {/* <Button size="auto" variant="clear" onClick={open}>
-                    <UserIcon color="#D10125" width={16} height={16} />
-                    {t('logout')}
-                  </Button> */}
 
                   <Button
                     size="auto"
@@ -58,12 +55,13 @@ export const Header = () => {
                   </Button>
                 </>
               ) : (
-                <Button variant="clear" onClick={handleLogin}>
-                  <UserIcon color="#D10125" width={16} height={16} />
-                  {t('login')}
-                </Button>
+                <>
+                  <Button variant="clear" onClick={handleLogin}>
+                    <UserIcon color="#D10125" width={16} height={16} />
+                    {t('login')}
+                  </Button>
+                </>
               )}
-
               <ContactInfo className={s.mobileOnly} />
             </div>
 

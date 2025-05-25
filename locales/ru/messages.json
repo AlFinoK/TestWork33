@@ -1,24 +1,71 @@
 {
-  "validation": {
-    "username_min": "Username must be at least 3 characters",
-    "password_min": "Password must be at least 6 characters"
-  },
-  "errors": {
-    "invalidCreds": "Invalid username or password"
-  },
-
   "header": {
     "phone": "+7 (999) 999-99-99",
     "email": "test@gmail.com",
-    "address": "Al-Farabi 54",
-    "login": "Login",
-    "logout": "Logout",
+    "address": "Аль-Фараби 54",
+    "login": "Войти",
+    "logout": "Выйти",
     "modal": {
-      "title": "Confirm logout",
-      "description": "Are you sure you want to logout?",
-      "cancel": "Cancel",
-      "confirm": "Confirm",
-      "toastError": "Fill all fields"
+      "title": "Подтвердить выход",
+      "description": "Вы уверены что хотите выйти?",
+      "cancel": "Отменить",
+      "confirm": "Подтвердить",
+      "toastError": "Заполните все поля"
     }
+  },
+
+  "cart": {
+    "addToCart": "В корзину",
+    "inCart": "В корзине",
+    "alreadyInCart": "Товар уже в корзине",
+    "addedSuccess": "Успешно добавлено в корзину"
+  },
+
+  "products": {
+    "heading": "Товары",
+    "error": "Ошибка при загрузке товаров"
+  },
+
+  "pagination": {
+    "prev": "Назад",
+    "next": "Вперёд",
+    "page": "Страница",
+    "of": "из"
+  },
+
+  "footer": {
+    "loggedAs": "Вы вошли как"
+  },
+
+  "tabs": {
+    "home": "Главная",
+    "hotDeals": "Горячие предложения",
+    "categories": "Категории",
+    "laptops": "Ноутбуки",
+    "smartphones": "Смартфоны",
+    "cameras": "Камеры",
+    "accessories": "Аксессуары"
+  },
+
+  "login": {
+    "title": "Вход",
+    "usernamePlaceholder": "Имя пользователя",
+    "passwordPlaceholder": "Пароль",
+    "loading": "Загрузка...",
+    "submit": "Войти",
+    "errors": {
+      "username_min": "Юзернейм должен быть не менее 3 символов",
+      "password_min": "Пароль должен быть не менее 6 символов",
+      "invalidCreds": "Неверный юзернейм или пароль",
+      "error": "Неизвестная ошибка"
+    }
+  },
+
+  "productDetailed": {
+    "category": "Категория",
+    "price": "Цена",
+    "notFound": "Товар не найден",
+    "error": "Ошибка",
+    "back": "Вернуться на главную"
   }
 }

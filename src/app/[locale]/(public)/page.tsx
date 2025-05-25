@@ -1,14 +1,5 @@
-import { useTranslations } from 'next-intl'
+import { redirect } from 'next/navigation'
 
-import s from './page.module.scss'
-import { ProductList } from '@/entities/product'
-
-export default function Home() {
-  const t = useTranslations()
-
-  return (
-    <div className={s.page}>
-      <ProductList />
-    </div>
-  )
+export default function HomePage() {
+  redirect('/products')
 }

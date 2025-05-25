@@ -1,4 +1,7 @@
+'use client'
+
 import React from 'react'
+import { useTranslations } from 'next-intl'
 
 import { Button } from '../Button'
 import s from './Pagination.module.scss'
@@ -11,16 +14,18 @@ interface PaginationProps {
 }
 
 export const Pagination: React.FC<PaginationProps> = ({ page, totalPages, onPrev, onNext }) => {
+  const t = useTranslations('pagination')
+
   return (
     <div className={s.root}>
-      <Button variant="primary" size="md" onClick={onPrev} disabled={page === 1}>
-        Prev
+      <Button variant="primary" size="sm" onClick={onPrev} disabled={page === 1}>
+        {t('prev')}
       </Button>
       <span className={s.pageInfo}>
-        Page {page} of {totalPages}
+        {t('page')} {page} {t('of')} {totalPages}
       </span>
-      <Button variant="primary" size="md" onClick={onNext} disabled={page === totalPages}>
-        Next
+      <Button variant="primary" size="sm" onClick={onNext} disabled={page === totalPages}>
+        {t('next')}
       </Button>
     </div>
   )

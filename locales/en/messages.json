@@ -20,5 +20,60 @@
       "confirm": "Confirm",
       "toastError": "Fill all fields"
     }
+  },
+
+  "cart": {
+    "addToCart": "Add to Cart",
+    "inCart": "In Cart",
+    "alreadyInCart": "Item is already in the cart",
+    "addedSuccess": "Successfully added to cart"
+  },
+
+  "products": {
+    "heading": "Products",
+    "error": "Error loading products"
+  },
+
+  "pagination": {
+    "prev": "Prev",
+    "next": "Next",
+    "page": "Page",
+    "of": "of"
+  },
+
+  "footer": {
+    "loggedAs": "Logged in as"
+  },
+
+  "tabs": {
+    "home": "Home",
+    "hotDeals": "Hot deals",
+    "categories": "Categories",
+    "laptops": "Laptops",
+    "smartphones": "Smartphones",
+    "cameras": "Cameras",
+    "accessories": "Accessories"
+  },
+
+  "login": {
+    "title": "Login",
+    "usernamePlaceholder": "Username",
+    "passwordPlaceholder": "Password",
+    "loading": "Loading...",
+    "submit": "Sign In",
+    "errors": {
+      "username_min": "Username must be at least 3 characters",
+      "password_min": "Password must be at least 6 characters",
+      "invalidCreds": "Invalid username or password",
+      "error": "An unknown error occurred"
+    }
+  },
+
+  "productDetailed": {
+    "category": "Category",
+    "price": "Price",
+    "notFound": "Product not found",
+    "error": "Error",
+    "back": "Back to main page"
   }
 }

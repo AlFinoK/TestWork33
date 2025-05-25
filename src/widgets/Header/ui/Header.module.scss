@@ -86,3 +86,20 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+.modal {
+  .modalBtns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .modalDescr {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    color: $light-gray-color;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}

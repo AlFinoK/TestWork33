@@ -2,23 +2,22 @@
 
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 import { useAuthStore } from '@/entities/auth'
+import { useErrorStore, useError, loginSchema, LoginSchemaType } from '@/shared/lib'
 import { Button, Input, ErrorMessage } from '@/shared/ui-kit'
-import { useErrorStore, useError } from '@/shared/lib'
 
 import s from './LoginForm.module.scss'
-import { useTranslations } from 'next-intl'
-import { loginSchema, LoginSchemaType } from '@/shared/lib/zodValidation'
 
 export const LoginForm = () => {
   const { signIn, loading } = useAuthStore()
   const router = useRouter()
-  const serverError = useErrorStore((state) => state.serverError)
-  const clearServerError = useErrorStore((state) => state.clearServerError)
-  const t = useTranslations('validation')
+  const { serverError, clearServerError } = useErrorStore()
+  const t = useTranslations('login')
+  const { translatedError } = useError(serverError)
 
   const {
     register,
@@ -28,41 +27,44 @@ export const LoginForm = () => {
     resolver: zodResolver(loginSchema),
   })
 
-  const { translatedError } = useError(serverError, errors)
-
   const onSubmit = async (data: LoginSchemaType) => {
     clearServerError()
     try {
       await signIn(data.username, data.password)
-      router.push('/')
+      router.push('/products')
     } catch {}
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className={s.form}>
-      <h3 className={s.title}>Login</h3>
+      <h3 className={s.title}>{t('title')}</h3>
+
       <Input
         type="text"
-        placeholder="Username"
+        placeholder={t('usernamePlaceholder')}
         {...register('username')}
         hasError={!!errors.username || !!serverError}
       />
-      <ErrorMessage message={errors.username?.message} />
+      <ErrorMessage
+        message={errors.username ? t(`errors.${errors.username.message}`) : undefined}
+      />
 
       <Input
         type="password"
-        placeholder="Password"
+        placeholder={t('passwordPlaceholder')}
         {...register('password')}
         hasError={!!errors.password || !!serverError}
       />
-      <ErrorMessage message={errors.password?.message} />
+      <ErrorMessage
+        message={errors.password ? t(`errors.${errors.password.message}`) : undefined}
+      />
 
       {translatedError && !errors.username && !errors.password && (
-        <ErrorMessage message={translatedError} />
+        <ErrorMessage message={t(translatedError)} />
       )}
 
-      <Button variant={'primary'} type="submit" disabled={loading} className={s.button}>
-        {loading ? 'Загрузка...' : 'Войти'}
+      <Button variant="primary" type="submit" disabled={loading} className={s.button}>
+        {loading ? t('loading') : t('submit')}
       </Button>
     </form>
   )

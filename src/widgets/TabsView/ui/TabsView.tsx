@@ -1,27 +1,28 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
+import { usePathname, useRouter } from 'next/navigation'
 
 import s from './TabsView.module.scss'
-import clsx from 'clsx'
 
 const tabs = [
-  { name: 'Home', route: '/' },
-  { name: 'Hot deals', route: 'hot_deals' },
-  { name: 'Categories', route: 'categories' },
-  { name: 'Laptops', route: 'laptops' },
-  { name: 'Smartphones', route: 'smartphones' },
-  { name: 'Cameras', route: 'cameras' },
-  { name: 'Accessories', route: 'accessories' },
+  { key: 'home', route: 'products' },
+  { key: 'hotDeals', route: 'hot_deals' },
+  { key: 'categories', route: 'categories' },
+  { key: 'laptops', route: 'laptops' },
+  { key: 'smartphones', route: 'smartphones' },
+  { key: 'cameras', route: 'cameras' },
+  { key: 'accessories', route: 'accessories' },
 ]
 
-const defaultTab = 'Home'
+const defaultTab = 'home'
 
 export const TabsView = () => {
   const pathname = usePathname()
   const router = useRouter()
-  const t = useTranslations()
+  const t = useTranslations('tabs')
+
   const activeTab = pathname.split('/').pop() || defaultTab
 
   return (
@@ -37,7 +38,7 @@ export const TabsView = () => {
             })}
             onClick={() => router.push(`/${tab.route}`)}
           >
-            <div className={s.left}>{tab.name}</div>
+            <div className={s.left}>{t(tab.key)}</div>
           </div>
         )
       })}

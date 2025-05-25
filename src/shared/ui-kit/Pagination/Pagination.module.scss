@@ -10,11 +10,20 @@
   background-color: #fff;
   box-shadow: 0 4px 12px rgb(0 0 0 / 6%);
   flex-wrap: wrap;
+
+  @media (width <= 420px) {
+    padding: 10px 4px;
+    gap: 4px;
+  }
 }
 
 .pageInfo {
   font-size: 16px;
   font-weight: 500;
-  color: #333;
   padding: 0 8px;
+
+  @media (width <= 420px) {
+    font-size: 12px;
+    padding: 0 4px;
+  }
 }
